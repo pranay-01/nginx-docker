@@ -1,0 +1,22 @@
+---
+
+- hosts: localhost
+  connection: local
+  become: true
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  tasks:
+  - name: "build docker image"
+    docker_image: 
+        name: custonginx
+        tag: latest
+        path: docker
+        state: present
+
+  - name: "launch_container"
+    docker_container: 
+        name: custocontainer
+        image: custonginx:latest
+        state: started
+        ports: 
+          - "9088:80"
