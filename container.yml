@@ -1,6 +1,7 @@
 ---
 
-- hosts: localhost
+- hosts:  testserver
+  remote_user: ibiadmin
   become: true
   tasks:
   - name: "build docker image"

@@ -1,0 +1,3 @@
+[testserver]
+
+10.168.188.92 ansible_user=ibiadmin ansible_ssh_private_key_file=~/.ssh/ibi_dev_onprem.pem
